@@ -3,7 +3,7 @@ extends layout
 block content
   .inner
     h2= title
-    pre= h.dump(user)
+    //- pre= h.dump(user)
     form(action="/account" method="POST")
       label(for="name") Name
       input(type="text" name="name" value=user.name)

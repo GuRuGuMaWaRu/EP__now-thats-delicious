@@ -19,7 +19,9 @@ const userSchema = new Schema({
     type: String,
     trime: true,
     required: "Please supply a name"
-  }
+  },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 userSchema.virtual("gravatar").get(function() {
