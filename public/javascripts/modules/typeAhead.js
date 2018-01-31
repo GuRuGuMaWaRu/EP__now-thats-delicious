@@ -28,7 +28,6 @@ function typeAhead(search) {
 
     // show search results!
     searchResults.style.display = "block";
-    searchResults.innerHTML = "";
 
     axios
       .get(`/api/v1/search?q=${this.value}`)
