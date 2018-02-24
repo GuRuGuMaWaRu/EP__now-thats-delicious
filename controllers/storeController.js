@@ -55,7 +55,7 @@ exports.createStore = async (req, res) => {
   const store = await new Store(req.body).save();
   req.flash(
     "success",
-    `Sucessfully created ${store.name}. Care to leave a review?`
+    `Successfully created ${store.name}. Care to leave a review?`
   );
   res.redirect(`/store/${store.slug}`);
 };
@@ -115,7 +115,7 @@ exports.updateStore = async (req, res) => {
 
 exports.getStoreBySlug = async (req, res, next) => {
   const store = await Store.findOne({ slug: req.params.slug }).populate(
-    "author"
+    "author reviews"
   );
   if (!store) return next();
   res.render("store", { store, title: store.name });

@@ -32,7 +32,7 @@ router.get("/login", userController.loginForm);
 router.post("/login", authController.login);
 router.get("/register", userController.registerForm);
 
-// 1. valitdate the registration data
+// 1. validate the registration data
 // 2. register the user
 // 3. we need to log them in
 router.post(
