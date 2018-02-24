@@ -4,8 +4,8 @@ mixin review(review)
       img.avatar(src=review.author.gravatar)
       p= review.author.name
     .review__stars(title=`Rated ${review.rating} out of 5 stars`)
-      = `&#9733;`.repeat(review.rating)
-      = `&#x2606;`.repeat(5 - review.rating)
+      = `★`.repeat(review.rating)
+      = `☆`.repeat(5 - review.rating)
     time.review__time(datetime=review.created)= h.moment(review.created).fromNow()
   .review__body
     p= review.text
